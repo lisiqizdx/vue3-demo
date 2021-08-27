@@ -1,18 +1,35 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+   <button @click="sendValue">send</button>
+   <h1>{{sonmsg}}</h1>
+    <HelloWorld ref="hello" @my-son='parantAccept' msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
-
+import{ ref } from 'vue'
 export default {
   name: 'admin',
   components: {
     HelloWorld
+  },
+  setup(){
+    const hello = ref();
+    const sonmsg = ref('父组件接收值');
+    const sendValue=()=>{
+      hello.value.acceptvalue('父组件调用')
+    }
+    const parantAccept=(value)=>{
+      sonmsg.value = value
+    }
+    return{
+      hello,
+      sonmsg,
+      sendValue,
+      parantAccept,
+    }
   }
 }
 </script>
