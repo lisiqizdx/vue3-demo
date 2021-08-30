@@ -19,6 +19,7 @@ export default {
     const hello = ref();
     const sonmsg = ref('父组件接收值');
     const sendValue=()=>{
+      sonmsg.value = '父组件接收值'
       hello.value.acceptvalue('父组件调用')
     }
     const parantAccept=(value)=>{

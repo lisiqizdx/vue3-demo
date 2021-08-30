@@ -22,6 +22,8 @@ export default {
       newmsg.value = value
     }
     const sonsendValue=()=>{
+      newmsg.value = props.msg
+      accevalue.value = '子组件默认值'
       context.emit('my-son','子组件传值父组件')
     }
     return{
