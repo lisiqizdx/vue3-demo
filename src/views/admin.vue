@@ -2,7 +2,7 @@
   <div class="home">
    <button @click="sendValue">send</button>
    <h1>{{sonmsg}}</h1>
-    <HelloWorld ref="hello" @my-son='parantAccept' msg="Welcome to Your Vue.js App"/>
+    <HelloWorld ref="hello" @my-son='parantAccept' msg="父组件传值给子组件"/>
   </div>
 </template>
 
